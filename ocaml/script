@@ -1,0 +1,16 @@
+#!/usr/bin/env nix-shell
+(*
+#! nix-shell -i utop -p opam ocaml ocamlPackages.core ocamlPackages.findlib ocamlPackages.cmdliner ocamlPackages.utop ocamlPackages.lwt
+*)
+
+#load "unix.cma";; (* Load the Unix module *)
+#use "topfind";;
+#require "cmdliner";;
+
+open Cmdliner
+
+let revolt () = print_endline "Revolt!";;
+
+let revolt_t = Term.(const revolt $ const ());;
+let cmd = Cmd.v (Cmd.info "revolt") revolt_t;;
+let () = exit (Cmd.eval cmd);;

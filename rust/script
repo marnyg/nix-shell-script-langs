@@ -11,11 +11,5 @@ fn main() {
         println!("{}", argument);
     };
     println!("{}", std::env::var("HOME").expect(""));
-    println!("{}", std::env::var("HOME").expect(""));
-    println!("{}", std::env::var("HOME").expect(""));
-    println!("{}", time::now().rfc822z());
-    println!("{}", time::now().rfc822z());
-    println!("{}", time::now().rfc822z());
-    println!("{}", time::now().rfc822z());
     println!("{}", time::now().rfc822z());
 }
